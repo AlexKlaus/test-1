@@ -1,3 +1,15 @@
+@font-face {
+    font-family: 'Rubik';
+    src: url('../fonts/rubik/Rubik-Regular.ttf');
+}
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html {
+    font-family: 'Rubik';
+}
 body {
     background-color: #C4C4C4;
 }
@@ -26,14 +38,14 @@ body {
     display: block;
     height: 7px;
     width: 67px;
-    background-color: #FDED0E;    
+    background-color: #C4C4C4;    
 }
 .burger span::before {
     content: '';
     display: block;
     height: 7px; 
     width: 67px;
-    background-color: #FDED0E;
+    background-color: #C4C4C4;
     position: relative;
     top: -15px;
 }
@@ -44,7 +56,7 @@ body {
     width: 67px;
     position: relative;
     top: 8px;
-    background-color: #FDED0E;
+    background-color: #C4C4C4;
 }
 .burger:hover{
     cursor: pointer;
@@ -60,4 +72,21 @@ body {
     height: 392px;
     background-color: #605C5C;
     box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25);
+}
+.menu-list {
+    display: flex;
+    height: 100%;
+    flex-direction: column;
+    align-items: center;
+    list-style: none;
+    color: #C4C4C4;
+    font-size: 24px;
+    line-height: 28px;
+    margin: 44px 27px 44px 35px;
+}
+.menu-item {
+    width: 100%;
+}
+.menu-item:hover {
+    cursor: pointer;
 }
