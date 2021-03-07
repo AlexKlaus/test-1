@@ -11,7 +11,7 @@
 </head>
 
 <body>
-    <nav class="nav">
+    <nav class="nav trans">
         <div class="burger" id='burger'><span></span></div>
     </nav>
     <menu class="menu" id='menu'>
@@ -28,8 +28,10 @@
             return function () {
                 if (window.getComputedStyle(elem).display == 'none') {
                     elem.style.display = 'block';
+                    setTimeout(() => (elem.style.opacity = '1'), 300);
                 } else {
-                    elem.style.display = 'none'
+                    elem.style.opacity = '0';
+                    setTimeout(() => (elem.style.display = 'none'), 300);
                 }
             }
         }
