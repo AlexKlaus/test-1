@@ -1,0 +1,35 @@
+nav {
+    display: block;
+    height: 98px;
+    width: 100%;
+    background-color: #C4C4C4;
+    position: fixed;
+    top: 0;
+}
+.burger {
+    display: block;
+    width: 67px;
+    height: 7px;
+    background-color: #FDED0E;
+    position: relative;
+    top: 43px;
+    left: 34px;
+}
+.burger::before {
+    content: '';
+    display: block;
+    width: 67px;
+    height: 7px;
+    background-color: #FDED0E;
+    position: relative;
+    top: -15px;
+}
+.burger::after {
+    content: '';
+    display: block;
+    width: 67px;
+    height: 7px;
+    background-color: #FDED0E;
+    position: relative;
+    top: 8px;
+}
