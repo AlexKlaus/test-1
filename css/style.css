@@ -31,6 +31,7 @@ body {
     height: 37px;
     top: 28px;
     left: 34px;
+    transition: 1s;
 }
 .burger span {
     content: '';
@@ -59,7 +60,9 @@ body {
 }
 .burger:hover{
     cursor: pointer;
+    transform: rotate(90deg);
 }
+
 .menu {
     display: none;
     position: fixed;
