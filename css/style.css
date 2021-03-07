@@ -76,6 +76,7 @@ body {
     box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25);
     opacity: 0;
     transition: opacity 1s;
+    z-index: 1;
 }
 .menu-list {
     display: flex;
@@ -93,4 +94,15 @@ body {
 }
 .menu-item:hover {
     cursor: pointer;
+}
+.blackout {
+    display: none;
+    position: absolute;
+    background-color: black;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    transition: opacity 1s;
+    opacity: 0;
 }
