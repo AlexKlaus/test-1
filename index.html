@@ -25,6 +25,19 @@
     </menu>
     <div class="blackout" id="blackout"></div>
     <script>
+
+        function burgerToTreangle(elem) {
+            setTimeout(() => (burger.style.setProperty('--middle-line', 'translateY(15px)')), 300);
+            setTimeout(() => (burger.style.setProperty('--top-line', 'rotate(-60deg) translate(2px, -20px)')), 300);
+            setTimeout(() => (burger.style.setProperty('--bottom-line', 'rotate(60deg) translate(-28px, -35px)')), 300);
+        }
+
+        function treangleToBurger(elem) {
+            setTimeout(() => (burger.style.setProperty('--middle-line', 'translateY(0px)')), 300);
+                setTimeout(() => (burger.style.setProperty('--top-line', 'rotate(0deg) translate(0px, 0px)')), 300);
+                setTimeout(() => (burger.style.setProperty('--bottom-line', 'rotate(0deg) translate(0px, 0px)')), 300);
+        }
+
         function showHide(elem, black) {
             // Функция для отображения модального окна
             return function () {
@@ -33,11 +46,16 @@
                     black.style.display = 'block';
                     setTimeout(() => (elem.style.opacity = '1'), 300);
                     setTimeout(() => (black.style.opacity = '0.5'), 300);
+                    // setTimeout(() => (burger.style.transform = 'rotate(90deg)'), 300);
+                    blackout.addEventListener('click', showHide(menu, blackout));
+                    burgerToTreangle(burger);
                 } else {
                     elem.style.opacity = '0';
                     setTimeout(() => (elem.style.display = 'none'), 600);
                     black.style.opacity = '0';
                     setTimeout(() => (black.style.display = 'none'), 600);
+                    treangleToBurger(burger);
+                    // setTimeout(() => (burger.style.transform = 'rotate(0deg)'), 300);
                 }
             }
         }
@@ -46,6 +64,8 @@
         let blackout = document.getElementById('blackout');
         burger.addEventListener('click', showHide(menu, blackout));  //обработка клика по бургеру
         blackout.addEventListener('click', showHide(menu, blackout));  //обработка клика по затемненному фону
+
+
     </script>
 </body>
 

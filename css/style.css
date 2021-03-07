@@ -38,7 +38,9 @@ body {
     display: block;
     height: 7px;
     width: 67px;
-    background-color: #C4C4C4;    
+    background-color: #C4C4C4;
+    transition: 1s;
+    transform: var(--middle-line);
 }
 .burger span::before {
     content: '';
@@ -48,6 +50,8 @@ body {
     background-color: #C4C4C4;
     position: relative;
     top: -15px;
+    transition: 1s;
+    transform: var(--top-line);
 }
 .burger span::after {
     content: '';
@@ -57,10 +61,12 @@ body {
     position: relative;
     top: 8px;
     background-color: #C4C4C4;
+    transition: 1s;
+    transform: var(--bottom-line);
 }
 .burger:hover{
     cursor: pointer;
-    transform: rotate(90deg);
+    /* transform: rotate(90deg); */
 }
 
 .menu {
