@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="ru">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,6 +9,7 @@
     <link rel="stylesheet" href="css/normalize.css">
     <title>Document</title>
 </head>
+
 <body>
     <nav class="nav">
         <div class="burger" id='burger'><span></span></div>
@@ -22,8 +24,19 @@
         </ul>
     </menu>
     <script>
-        document.getElementById('burger').addEventListener('click', 
-        function() {document.getElementById('menu').style.display = 'block'})
+        function showHide(elem) {
+            return function () {
+                if (window.getComputedStyle(elem).display == 'none') {
+                    elem.style.display = 'block';
+                } else {
+                    elem.style.display = 'none'
+                }
+            }
+        }
+        let menu = document.getElementById('menu')
+        let burger = document.getElementById('burger')
+        burger.addEventListener('click', showHide(menu))
     </script>
 </body>
+
 </html>
