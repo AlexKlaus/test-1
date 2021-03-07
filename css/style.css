@@ -7,29 +7,39 @@ nav {
     top: 0;
 }
 .burger {
-    display: block;
+    display: flex;
+    align-items: center;
+    position: fixed;
     width: 67px;
-    height: 7px;
-    background-color: #FDED0E;
-    position: relative;
-    top: 43px;
+    height: 37px;
+    top: 28px;
     left: 34px;
 }
-.burger::before {
+.burger span {
     content: '';
     display: block;
-    width: 67px;
     height: 7px;
+    width: 67px;
+    background-color: #FDED0E;    
+}
+.burger span::before {
+    content: '';
+    display: block;
+    height: 7px; 
+    width: 67px;
     background-color: #FDED0E;
     position: relative;
     top: -15px;
 }
-.burger::after {
+.burger span::after {
     content: '';
     display: block;
+    height: 7px; 
     width: 67px;
-    height: 7px;
-    background-color: #FDED0E;
     position: relative;
     top: 8px;
+    background-color: #FDED0E;
+}
+.burger:hover{
+    cursor: pointer;
 }
