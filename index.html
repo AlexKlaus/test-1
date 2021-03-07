@@ -32,7 +32,7 @@
         <div class="language-switcher">Ru|En</div>
     </nav>
     <main>
-        <div class="wrapper">
+        <div class="wrapper" id='wrapper'>
             
         </div>
     </main>
@@ -59,16 +59,15 @@
                     black.style.display = 'block';
                     setTimeout(() => (elem.style.opacity = '1'), 300);
                     setTimeout(() => (black.style.opacity = '0.5'), 300);
-                    // setTimeout(() => (burger.style.transform = 'rotate(90deg)'), 300);
-                    blackout.addEventListener('click', showHide(menu, blackout));
                     burgerToTreangle(burger);
+                    document.getElementById('blackout').style.height = 
+                    window.getComputedStyle(document.getElementById('wrapper')).height;
                 } else {
                     elem.style.opacity = '0';
                     setTimeout(() => (elem.style.display = 'none'), 600);
                     black.style.opacity = '0';
                     setTimeout(() => (black.style.display = 'none'), 600);
                     treangleToBurger(burger);
-                    // setTimeout(() => (burger.style.transform = 'rotate(0deg)'), 300);
                 }
             }
         }
