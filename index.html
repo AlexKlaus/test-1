@@ -11,9 +11,7 @@
 </head>
 
 <body>
-    <nav class="nav trans">
-        <div class="burger" id='burger'><span></span></div>
-    </nav>
+    <div class="burger" id='burger'><span class="burger-line"></span></div>
     <menu class="menu" id='menu'>
         <ul class="menu-list">
             <li class="menu-item">Blog</li>
@@ -23,6 +21,21 @@
             <li class="menu-item">Site Map</li>
         </ul>
     </menu>
+    <nav class="nav">
+        <span class="logo"><a href="#"><img src="img/Group LOGO Grey.svg" alt="Логотип"></a></span>
+        <ul class="nav-list">
+            <li class="nav-item"><a class="nav-link" href="#">Blog</a></li>
+            <li class="nav-item"><a class="nav-link" href="#">Portfolio</a></li>
+            <li class="nav-item"> <a class="nav-link" href="#">Shop</a></li>
+            <li class="nav-item"><a class="nav-link" href="#">Contact</a></li>
+        </ul>
+        <div class="language-switcher">Ru|En</div>
+    </nav>
+    <main>
+        <div class="wrapper">
+            
+        </div>
+    </main>
     <div class="blackout" id="blackout"></div>
     <script>
 
@@ -34,8 +47,8 @@
 
         function treangleToBurger(elem) {
             setTimeout(() => (burger.style.setProperty('--middle-line', 'translateY(0px)')), 300);
-                setTimeout(() => (burger.style.setProperty('--top-line', 'rotate(0deg) translate(0px, 0px)')), 300);
-                setTimeout(() => (burger.style.setProperty('--bottom-line', 'rotate(0deg) translate(0px, 0px)')), 300);
+            setTimeout(() => (burger.style.setProperty('--top-line', 'rotate(0deg) translate(0px, 0px)')), 300);
+            setTimeout(() => (burger.style.setProperty('--bottom-line', 'rotate(0deg) translate(0px, 0px)')), 300);
         }
 
         function showHide(elem, black) {
