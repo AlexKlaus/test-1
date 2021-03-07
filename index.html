@@ -10,7 +10,20 @@
 </head>
 <body>
     <nav class="nav">
-        <div class="burger"><span></span></div>
+        <div class="burger" id='burger'><span></span></div>
     </nav>
+    <menu class="menu" id='menu'>
+        <ul class="menu-list">
+            <li class="menu-item">Blog</li>
+            <li class="menu-item">Portfolio</li>
+            <li class="menu-item">Contact</li>
+            <li class="menu-item">Price</li>
+            <li class="menu-item">Site Map</li>
+        </ul>
+    </menu>
+    <script>
+        document.getElementById('burger').addEventListener('click', 
+        function() {document.getElementById('menu').style.display = 'block'})
+    </script>
 </body>
 </html>
