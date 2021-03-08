@@ -70,6 +70,7 @@ body {
     background-color: #C4C4C4;
     transition: 1s;
     transform: var(--middle-line);
+    border-radius: 3.5px;
 }
 .burger-line::before {
     content: '';
@@ -81,6 +82,7 @@ body {
     top: -15px;
     transition: 1s;
     transform: var(--top-line);
+    border-radius: 3.5px;
 }
 .burger-line::after {
     content: '';
@@ -92,6 +94,7 @@ body {
     background-color: #C4C4C4;
     transition: 1s;
     transform: var(--bottom-line);
+    border-radius: 3.5px;
 }
 .burger:hover{
     cursor: pointer;
