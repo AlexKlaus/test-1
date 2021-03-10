@@ -2,11 +2,12 @@ const swiper = new Swiper('.swiper-container', {
     // Optional parameters
     direction: 'horizontal',
     loop: true,
-    slidesPerView: 3,
-    spaceBetween: 30,
+    slidesPerView: 4,
+    spaceBetween: 27,
     mousewheel: {
         invert: true,
     },
+    slidesPerGroup: 3,
     // centeredSlides: true,
 
     // // If we need pagination
