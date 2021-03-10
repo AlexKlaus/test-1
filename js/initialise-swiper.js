@@ -2,8 +2,8 @@ const swiper = new Swiper('.swiper-container', {
     // Optional parameters
     direction: 'horizontal',
     loop: true,
-    slidesPerView: 4,
-    spaceBetween: 27,
+    slidesPerView: 3,
+    spaceBetween: 30,
     mousewheel: {
         invert: true,
     },

@@ -200,3 +200,13 @@ body {
     background-repeat: no-repeat;
     background-position: center;
 }
+.feedback {
+    display: none;
+    position: fixed;
+    width: 1142px;
+    height: 984px;
+    top: calc(50vh - 492px);
+    left: calc(50% - 571px);
+    z-index: 5;
+    background-color: rgba(105, 101, 101, 0.85);
+}
