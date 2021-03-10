@@ -7,6 +7,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.css" />
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
     <title>Document</title>
 </head>
 
@@ -33,13 +35,44 @@
     </nav>
     <main>
         <div class="wrapper" id='wrapper'>
-            
+            <!-- Slider main container -->
+            <div class="swiper-container">
+                <!-- Additional required wrapper -->
+                <div class="swiper-wrapper">
+                    <!-- Slides -->
+                    <div class="swiper-slide"><a class="swiper-link" style="background-image: url('img/Ellipse 3.svg')" href="#"></a></div>
+                    <div class="swiper-slide"><a class="swiper-link" style="background-image: url('img/Polygon\ 1.svg')" href="#"></a></div>
+                    <div class="swiper-slide"><a class="swiper-link" style="background-image: url('img/Line\ 1.svg')" href="#"></a></div>
+                    <div class="swiper-slide"><a class="swiper-link" style="background-image: url('img/Rectangle\ 14.svg')" href="#"></a></div>
+                    <div class="swiper-slide"><a class="swiper-link" style="background-image: url('img/Star\ 1.svg')" href="#"></a></div>
+                    <div class="swiper-slide"><a class="swiper-link" style="background-image: url('img/Rectangle\ 15.svg')" href="#"></a></div>
+                    <div class="swiper-slide"><a class="swiper-link" style="background-image: url('img/Vector\ 3.svg')" href="#"></a></div>
+                </div>
+                <!-- If we need pagination -->
+                <!-- <div class="swiper-pagination"></div> -->
+
+                <!-- If we need navigation buttons -->
+                <!-- <div class="swiper-button-prev"></div> -->
+                <!-- <div class="swiper-button-next"></div> -->
+
+                <!-- If we need scrollbar -->
+                <!-- <div class="swiper-scrollbar"></div> -->
+            </div>
         </div>
     </main>
-    <footer class = 'footer'>
-
+    <footer class='footer'>
+        <div class="block"></div>
+        <div class="icons">
+            <a class="icons-item" href="#"><img src="img/Mail Button.svg" alt="Mail"></a>
+            <a class="icons-item" href="#"><img src="img/You Tube Button.svg" alt="YouTube"></a>
+            <a class="icons-item" href="#"><img src="img/Inst Button.svg" alt="Inst"></a>
+        </div>
+        <div class="copyright">All right reserved</div>
     </footer>
     <div class="blackout" id="blackout"></div>
+    <script src="https://unpkg.com/swiper/swiper-bundle.js"></script>
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <script src="js/initialise-swiper.js"></script>
     <script>
 
         function burgerToTreangle(elem) {
@@ -65,8 +98,8 @@
                     setTimeout(() => (elem.style.opacity = '1'), 300);
                     setTimeout(() => (black.style.opacity = '0.5'), 300);
                     burgerToTreangle(burger);
-                    document.getElementById('blackout').style.height = 
-                    window.getComputedStyle(document.body).height;
+                    document.getElementById('blackout').style.height =
+                        window.getComputedStyle(document.body).height;
                 } else {
                     elem.style.opacity = '0';
                     setTimeout(() => (elem.style.display = 'none'), 600);
@@ -81,8 +114,6 @@
         let blackout = document.getElementById('blackout');
         burger.addEventListener('click', showHide(menu, blackout));  //обработка клика по бургеру
         blackout.addEventListener('click', showHide(menu, blackout));  //обработка клика по затемненному фону
-
-
     </script>
 </body>
 

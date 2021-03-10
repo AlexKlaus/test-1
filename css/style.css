@@ -28,6 +28,7 @@ body {
     color: #c4c4c4;
     font-size: 36px;
     line-height: 43px;
+    z-index: 2;
 }
 .nav-list {
     display: flex;
@@ -61,7 +62,7 @@ body {
     top: 28px;
     left: 34px;
     transition: 1s;
-    z-index: 1;
+    z-index: 3;
     --burger-line-color: #C4C4C4
 }
 .burger-line {
@@ -116,7 +117,7 @@ body {
     box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25);
     opacity: 0;
     transition: opacity 1s;
-    z-index: 1;
+    z-index: 3;
 }
 .menu-list {
     display: flex;
@@ -144,19 +145,58 @@ body {
     left: 0;
     transition: opacity 1s;
     opacity: 0;
+    z-index: 2;
 }
 .logo {
     margin-left: 200px;
 }
 .wrapper {
+    display: flex;
+    align-items: center;
     width: 1142px;
     background: rgba(63, 58, 58, 0.61);
     box-shadow: 7px 4px 4px rgba(0, 0, 0, 0.25);
     margin: 0 auto;
-    height: 100vh;
+    min-height: 100vh;
+    /* padding-top: calc(100vh-188); */
 }
 .footer {
-    display: block;
+    display: grid;
+    grid-template-columns: 33.3% 33.3% 33.3%;
     height: 98px;
+    width: 100%;
     background-color: #3F3A3A;
+    padding-top: 33px;
+    padding-bottom: 45px;
+}
+.icons {
+    text-align: center;
+    vertical-align: middle;
+}
+.icons-item {
+    margin-right: 28px;
+}
+.copyright {
+    text-align: right;
+    margin-right: 60px;
+    font-size: 14px;
+    line-height: 17px;
+    color: #E5E5E5;
+}
+.swiper-container {
+    width: 1089px;
+    height: 377px;
+    z-index: 1;
+}
+.swiper-slide {
+    background-color: #151414;
+    z-index: 1;
+
+}
+.swiper-link {
+    display: block;
+    height: 100%;
+    width: 100%;
+    background-repeat: no-repeat;
+    background-position: center;
 }
