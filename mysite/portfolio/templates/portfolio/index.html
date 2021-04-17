@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="stylesheet" href="{% static 'css/normalize.css' %}">
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.css"/>
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css"/>
+    <title>Document</title>
+</head>
+
+<body>
+<div class="burger" id='burger'><span class="burger-line"></span></div>
+<menu class="menu" id='menu'>
+    <ul class="menu-list">
+        <li class="menu-item">Blog</li>
+        <li class="menu-item">Portfolio</li>
+        <li class="menu-item">Contact</li>
+        <li class="menu-item">Price</li>
+        <li class="menu-item">Site Map</li>
+    </ul>
+</menu>
+<div class="feedback"></div>
+<nav class="nav">
+    <span class="logo"><a href="#"><img src="{% static 'img/Group LOGO Grey.svg' %}" alt="Логотип"></a></span>
+    <ul class="nav-list">
+        <li class="nav-item"><a class="nav-link" href="#">Blog</a></li>
+        <li class="nav-item"><a class="nav-link" href="#">Portfolio</a></li>
+        <li class="nav-item"><a class="nav-link" href="#">Shop</a></li>
+        <li class="nav-item"><a class="nav-link" href="#">Contact</a></li>
+    </ul>
+    <div class="language-switcher">Ru|En</div>
+</nav>
+<main>
+    <div class="wrapper" id='wrapper'>
+        <!-- Slider main container -->
+        <div class="swiper-container">
+            <!-- Additional required wrapper -->
+            <div class="swiper-wrapper">
+                <!-- Slides -->
+                <div class="swiper-slide"><a class="swiper-link" style="background-image: url('{% static 'img/Ellipse 3.svg' %}')"
+                                             href="#"></a></div>
+                <div class="swiper-slide"><a class="swiper-link" style="background-image: url('{% static 'img/Polygon 1.svg' %}')"
+                                             href="#"></a></div>
+                <div class="swiper-slide"><a class="swiper-link" style="background-image: url('{% static 'img/Line 1.svg' %}')"
+                                             href="#"></a></div>
+                <div class="swiper-slide"><a class="swiper-link" style="background-image: url('{% static 'img/Rectangle 14.svg' %}')"
+                                             href="#"></a></div>
+                <div class="swiper-slide"><a class="swiper-link" style="background-image: url('{% static 'img/Star 1.svg' %}')"
+                                             href="#"></a></div>
+                <div class="swiper-slide"><a class="swiper-link" style="background-image: url('{% static 'img/Rectangle 15.svg' %}')"
+                                             href="#"></a></div>
+                <div class="swiper-slide"><a class="swiper-link" style="background-image: url('{% static 'img/Vector 3.svg' %}')"
+                                             href="#"></a></div>
+            </div>
+            <!-- If we need pagination -->
+            <!-- <div class="swiper-pagination"></div> -->
+
+            <!-- If we need navigation buttons -->
+            <!-- <div class="swiper-button-prev"></div>
+            <div class="swiper-button-next"></div> -->
+
+            <!-- If we need scrollbar -->
+            <!-- <div class="swiper-scrollbar"></div> -->
+        </div>
+    </div>
+</main>
+<footer class='footer'>
+    <div class="block"></div>
+    <div class="icons">
+        <a class="icons-item" href="#"><img src="{% static 'img/Mail Button.svg' %}" alt="Mail"></a>
+        <a class="icons-item" href="#"><img src="{% static 'img/You Tube Button.svg' %}" alt="YouTube"></a>
+        <a class="icons-item" href="#"><img src="{% static 'img/Inst Button.svg' %}" alt="Inst"></a>
+    </div>
+    <div class="copyright">All right reserved</div>
+</footer>
+<div class="blackout" id="blackout"></div>
+<script src="https://unpkg.com/swiper/swiper-bundle.js"></script>
+<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+<script src="{% static 'js/initialise-swiper.js' %}"></script>
+<script>
+
+        function burgerToTreangle(elem) {
+            setTimeout(() => (burger.style.setProperty('--middle-line', 'translateY(15px)')), 300);
+            setTimeout(() => (burger.style.setProperty('--top-line', 'rotate(-60deg) translate(2px, -19px)')), 300);
+            setTimeout(() => (burger.style.setProperty('--bottom-line', 'rotate(60deg) translate(-28px, -34px)')), 300);
+            burger.style.setProperty('--burger-line-color', 'yellow');
+        }
+
+        function treangleToBurger(elem) {
+            setTimeout(() => (burger.style.setProperty('--middle-line', 'translateY(0px)')), 300);
+            setTimeout(() => (burger.style.setProperty('--top-line', 'rotate(0deg) translate(0px, 0px)')), 300);
+            setTimeout(() => (burger.style.setProperty('--bottom-line', 'rotate(0deg) translate(0px, 0px)')), 300);
+            burger.style.setProperty('--burger-line-color', '#C4C4C4');
+        }
+
+        function showHide(elem, black) {
+            // Функция для отображения модального окна
+            return function () {
+                if (window.getComputedStyle(elem).display == 'none') {
+                    elem.style.display = 'block';
+                    black.style.display = 'block';
+                    setTimeout(() => (elem.style.opacity = '1'), 300);
+                    setTimeout(() => (black.style.opacity = '0.5'), 300);
+                    burgerToTreangle(burger);
+                    document.getElementById('blackout').style.height =
+                        window.getComputedStyle(document.body).height;
+                } else {
+                    elem.style.opacity = '0';
+                    setTimeout(() => (elem.style.display = 'none'), 600);
+                    black.style.opacity = '0';
+                    setTimeout(() => (black.style.display = 'none'), 600);
+                    treangleToBurger(burger);
+                }
+            }
+        }
+        let menu = document.getElementById('menu');  //всплывающее меню
+        let burger = document.getElementById('burger');
+        let blackout = document.getElementById('blackout');
+        burger.addEventListener('click', showHide(menu, blackout));  //обработка клика по бургеру
+        blackout.addEventListener('click', showHide(menu, blackout));  //обработка клика по затемненному фону
+
+</script>
+</body>
+
+</html>
